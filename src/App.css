@@ -505,3 +505,17 @@
     flex-direction: column;
   }
 }
+
+/* Modes section contrast fix */
+.intro-section h2 {
+  color: #20251c;
+}
+
+.intro-section > p:not(.section-kicker) {
+  color: #64665b;
+}
+
+.intro-section .section-kicker {
+  color: #8b6335;
+}
+
