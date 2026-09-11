@@ -1,121 +1,159 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+import { ArrowDownRight, Copy, Disc3, Gamepad2, ShieldCheck } from 'lucide-react'
 import './App.css'
 
+const SERVER_IP = 'rulexmc.mcsh.io'
+
 function App() {
-  const [count, setCount] = useState(0)
+  const copyServerIp = async () => {
+    try {
+      await navigator.clipboard.writeText(SERVER_IP)
+      alert('Server IP copied')
+    } catch {
+      window.prompt('Copy the RuleX server IP:', SERVER_IP)
+    }
+  }
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <main className="site-shell">
+      <nav className="navbar">
+        <a className="brand" href="#top" aria-label="RuleX home">
+          <span className="brand-mark">R</span>
+          <span className="brand-name">RULE<span>X</span></span>
+        </a>
+
+        <div className="nav-links">
+          <a href="#modes">Modes</a>
+          <a href="#features">Features</a>
+          <a href="#ranks">Ranks</a>
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
+
+        <button className="nav-join" onClick={copyServerIp}>
+          Copy IP <Copy size={15} />
         </button>
-      </section>
+      </nav>
 
-      <div className="ticks"></div>
+      <section className="hero" id="top">
+        <div className="hero-image" aria-hidden="true" />
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+        <div className="hero-overlay" />
+
+        <div className="hero-content">
+          <p className="eyebrow">
+            <span className="eyebrow-line" />
+            MINECRAFT SURVIVAL NETWORK
+          </p>
+
+          <h1>
+            BUILD YOUR
+            <br />
+            <em>EMPIRE.</em>
+          </h1>
+
+          <p className="hero-description">
+            A competitive Minecraft network built around progression,
+            economy, PvP, and the people you choose to fight beside.
+          </p>
+
+          <div className="hero-actions">
+            <button className="primary-button" onClick={copyServerIp}>
+              JOIN RULEX <ArrowDownRight size={18} />
+            </button>
+
+            <a className="secondary-button" href="#modes">
+              EXPLORE MODES
+            </a>
+          </div>
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+
+        <div className="hero-bottom">
+          <div className="server-detail">
+            <span className="detail-label">JAVA EDITION</span>
+            <strong>{SERVER_IP}</strong>
+          </div>
+
+          <div className="server-detail">
+            <span className="detail-label">AVAILABLE MODES</span>
+            <strong>Survival <span>/</span> LifeSteal</strong>
+          </div>
+
+          <div className="scroll-hint">
+            <span>SCROLL TO EXPLORE</span>
+            <ArrowDownRight size={17} />
+          </div>
         </div>
       </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+      <section className="intro-section" id="modes">
+        <p className="section-kicker">TWO WAYS TO PLAY</p>
+        <h2>Choose your world.</h2>
+        <p>
+          Build carefully in Survival or risk everything in LifeSteal.
+          Every decision changes what comes next.
+        </p>
+
+        <div className="mode-grid">
+          <article className="mode-card survival-card">
+            <div className="mode-card-top">
+              <span>01 / SURVIVAL</span>
+              <Gamepad2 size={20} />
+            </div>
+            <h3>Make your own economy.</h3>
+            <p>
+              Bounties, custom shops, progression, daily rewards, and a
+              world designed for long-term play.
+            </p>
+            <a href="#features">Discover Survival <ArrowDownRight size={16} /></a>
+          </article>
+
+          <article className="mode-card lifesteal-card">
+            <div className="mode-card-top">
+              <span>02 / LIFESTEAL</span>
+              <ShieldCheck size={20} />
+            </div>
+            <h3>Every heart has a price.</h3>
+            <p>
+              Form alliances, protect your hearts, and fight for control
+              in a world where defeat actually matters.
+            </p>
+            <a href="#features">Discover LifeSteal <ArrowDownRight size={16} /></a>
+          </article>
+        </div>
+      </section>
+
+      <section className="feature-section" id="features">
+        <div>
+          <p className="section-kicker">BUILT FOR PROGRESSION</p>
+          <h2>More than<br />just survival.</h2>
+        </div>
+
+        <div className="feature-list">
+          <div>
+            <span>01</span>
+            <h3>Custom economy</h3>
+            <p>A balanced system designed around meaningful progress.</p>
+          </div>
+          <div>
+            <span>02</span>
+            <h3>Player-driven competition</h3>
+            <p>Bounties, leaderboards, PvP, and rivalries that matter.</p>
+          </div>
+          <div>
+            <span>03</span>
+            <h3>Constant updates</h3>
+            <p>New systems, events, skills, rewards, and content.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer className="footer">
+        <div className="brand">
+          <span className="brand-mark">R</span>
+          <span className="brand-name">RULE<span>X</span></span>
+        </div>
+        <p>Rule the world. Build your legacy.</p>
+        <a href="#top">Back to top ↑</a>
+      </footer>
+    </main>
   )
 }
 
