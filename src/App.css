@@ -93,12 +93,50 @@
 
 .hero {
   position: relative;
+  isolation: isolate;
   min-height: 760px;
-  height: 100vh;
-  max-height: 1000px;
   display: flex;
   align-items: center;
-  padding: 130px 5vw 90px;
+  overflow: hidden;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(12, 14, 11, 0.92) 0%,
+      rgba(12, 14, 11, 0.72) 34%,
+      rgba(12, 14, 11, 0.25) 68%,
+      rgba(12, 14, 11, 0.12) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(12, 14, 11, 0.38),
+      rgba(12, 14, 11, 0.05)
+    ),
+    url('./assets/hero.jpg');
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  filter: saturate(1.12) contrast(1.08);
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 72% 42%,
+      rgba(255, 211, 87, 0.08),
+      transparent 42%
+    ),
+    linear-gradient(
+      180deg,
+      transparent 65%,
+      rgba(8, 10, 8, 0.42) 100%
+    );
 }
 
 .hero-image {
