@@ -121,27 +121,49 @@ function App() {
       </section>
 
       <section className="feature-section" id="features">
-        <div>
+        <div className="feature-intro">
           <p className="section-kicker">BUILT FOR PROGRESSION</p>
           <h2>More than<br />just survival.</h2>
+          <p className="feature-summary">
+            RuleX is built around the systems that make every session
+            feel meaningful—from your first starter kit to your biggest
+            rivalry.
+          </p>
         </div>
 
         <div className="feature-list">
-          <div>
-            <span>01</span>
-            <h3>Custom economy</h3>
-            <p>A balanced system designed around meaningful progress.</p>
-          </div>
-          <div>
-            <span>02</span>
-            <h3>Player-driven competition</h3>
-            <p>Bounties, leaderboards, PvP, and rivalries that matter.</p>
-          </div>
-          <div>
-            <span>03</span>
-            <h3>Constant updates</h3>
-            <p>New systems, events, skills, rewards, and content.</p>
-          </div>
+          <article className="feature-item">
+            <span className="feature-number">01</span>
+            <div>
+              <h3>Build your economy.</h3>
+              <p>
+                Custom shops, player trading, daily rewards, kits,
+                and an economy designed around long-term progress.
+              </p>
+            </div>
+          </article>
+
+          <article className="feature-item">
+            <span className="feature-number">02</span>
+            <div>
+              <h3>Compete for control.</h3>
+              <p>
+                Bounties, PvP, live leaderboards, custom enchantments,
+                and rivalries that give every decision weight.
+              </p>
+            </div>
+          </article>
+
+          <article className="feature-item">
+            <span className="feature-number">03</span>
+            <div>
+              <h3>Keep discovering.</h3>
+              <p>
+                Skills, upgradable spawners, custom crates, RTP,
+                chat games, trivia, and server events.
+              </p>
+            </div>
+          </article>
         </div>
       </section>
 
