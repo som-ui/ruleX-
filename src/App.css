@@ -587,3 +587,156 @@
   }
 }
 
+
+.ranks-section {
+  padding: 130px 10vw;
+  background: #20251c;
+  color: #f4f0e8;
+}
+
+.ranks-heading {
+  max-width: 620px;
+}
+
+.ranks-heading h2 {
+  margin: 18px 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(42px, 6vw, 88px);
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  line-height: 0.95;
+}
+
+.ranks-heading > p:not(.section-kicker) {
+  max-width: 430px;
+  color: #a9aa9e;
+  line-height: 1.8;
+}
+
+.rank-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 70px;
+}
+
+.rank-card {
+  min-height: 390px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  background: #2b3026;
+  border: 1px solid rgba(244, 240, 232, 0.12);
+}
+
+.rank-card-featured {
+  background: #cda66b;
+  color: #20251c;
+  transform: translateY(-18px);
+}
+
+.rank-label {
+  color: #cda66b;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.rank-card-featured .rank-label {
+  color: #20251c;
+  opacity: 0.7;
+}
+
+.rank-card h3 {
+  margin: 48px 0 8px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(30px, 3vw, 48px);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+}
+
+.rank-price {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.rank-description {
+  min-height: 58px;
+  margin: 22px 0 26px;
+  color: #a9aa9e;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.rank-card-featured .rank-description {
+  color: rgba(32, 37, 28, 0.72);
+}
+
+.rank-card ul {
+  display: grid;
+  gap: 10px;
+  margin: auto 0 0;
+  padding: 22px 0 0;
+  border-top: 1px solid rgba(244, 240, 232, 0.15);
+  list-style: none;
+}
+
+.rank-card li {
+  color: #d8d8ce;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.rank-card li::before {
+  content: '＋';
+  margin-right: 8px;
+  color: #cda66b;
+}
+
+.rank-card-featured ul {
+  border-color: rgba(32, 37, 28, 0.2);
+}
+
+.rank-card-featured li {
+  color: #20251c;
+}
+
+.rank-card-featured li::before {
+  color: #20251c;
+}
+
+.rank-note {
+  margin-top: 30px;
+  color: #777d70;
+  font-size: 11px;
+}
+
+@media (max-width: 1050px) {
+  .rank-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rank-card-featured {
+    transform: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .ranks-section {
+    padding: 85px 22px;
+  }
+
+  .rank-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 48px;
+  }
+
+  .rank-card {
+    min-height: 350px;
+  }
+
+  .rank-card h3 {
+    margin-top: 35px;
+  }
+}

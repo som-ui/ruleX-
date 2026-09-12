@@ -167,6 +167,81 @@ function App() {
         </div>
       </section>
 
+      <section className="ranks-section" id="ranks">
+        <div className="ranks-heading">
+          <p className="section-kicker">CHOOSE YOUR ADVANTAGE</p>
+          <h2>Rise through<br />the ranks.</h2>
+          <p>
+            Start small, build your reputation, and unlock more ways to
+            shape your journey on RuleX.
+          </p>
+        </div>
+
+        <div className="rank-grid">
+          <article className="rank-card">
+            <span className="rank-label">01 / ENTRY</span>
+            <h3>Aura</h3>
+            <p className="rank-price">$0.99</p>
+            <p className="rank-description">
+              A first step into the RuleX rank system.
+            </p>
+            <ul>
+              <li>Hat, workbench, and disposal</li>
+              <li>Priority queue</li>
+              <li>+1 maximum heart</li>
+            </ul>
+          </article>
+
+          <article className="rank-card rank-card-featured">
+            <span className="rank-label">02 / PROGRESSION</span>
+            <h3>Onyx</h3>
+            <p className="rank-price">$2.99</p>
+            <p className="rank-description">
+              More utility, more control, more room to progress.
+            </p>
+            <ul>
+              <li>Everything in Aura</li>
+              <li>Ender Chest and Feed</li>
+              <li>Onyx chat formatting</li>
+              <li>+2 maximum hearts</li>
+              <li>1 Revive Beacon</li>
+            </ul>
+          </article>
+
+          <article className="rank-card">
+            <span className="rank-label">03 / ELITE</span>
+            <h3>Apex</h3>
+            <p className="rank-price">$5.99</p>
+            <p className="rank-description">
+              Built for players ready to push further.
+            </p>
+            <ul>
+              <li>Expanded rank privileges</li>
+              <li>Premium utility and progression</li>
+              <li>Elite status across the network</li>
+            </ul>
+          </article>
+
+          <article className="rank-card">
+            <span className="rank-label">04 / HIGHEST TIER</span>
+            <h3>Ruler</h3>
+            <p className="rank-price">$9.99</p>
+            <p className="rank-description">
+              The highest listed rank for those who want to stand apart.
+            </p>
+            <ul>
+              <li>Top-tier rank identity</li>
+              <li>Premium network experience</li>
+              <li>Designed for dedicated players</li>
+            </ul>
+          </article>
+        </div>
+
+        <p className="rank-note">
+          Rank details and availability may change as the network evolves.
+        </p>
+      </section>
+
       <footer className="footer">
         <div className="brand">
           <span className="brand-mark">R</span>
