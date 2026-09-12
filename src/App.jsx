@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { ArrowDownRight, Copy, Disc3, Gamepad2, ShieldCheck } from 'lucide-react'
 import './App.css'
 
@@ -5,10 +6,36 @@ const SERVER_IP = 'rulexmc.mcsh.io'
 const DISCORD_URL = 'https://discord.gg/Jr3ugXAnh'
 
 function App() {
+  const [copied, setCopied] = useState(false)
+
+  useEffect(() => {
+    const revealElements = document.querySelectorAll('[data-reveal]')
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px',
+      }
+    )
+
+    revealElements.forEach((element) => observer.observe(element))
+
+    return () => observer.disconnect()
+  }, [])
+
   const copyServerIp = async () => {
     try {
       await navigator.clipboard.writeText(SERVER_IP)
-      alert('Server IP copied')
+      setCopied(true)
+      window.setTimeout(() => setCopied(false), 1800)
     } catch {
       window.prompt('Copy the RuleX server IP:', SERVER_IP)
     }
@@ -44,13 +71,13 @@ function App() {
     </div>
 
     <button className="nav-join" onClick={copyServerIp}>
-      <span>Copy IP</span>
+      <span>{copied ? "COPIED ✓" : "COPY IP"}</span>
       <Copy size={15} />
     </button>
   </div>
 </nav>
 
-      <section className="hero" id="top">
+      <section className="hero" id="top" data-reveal="hero">
         <div className="hero-image" aria-hidden="true" />
 
         <div className="hero-overlay" />
@@ -101,7 +128,7 @@ function App() {
         </div>
       </section>
 
-      <section className="intro-section" id="modes">
+      <section className="intro-section" id="modes" data-reveal="section">
         <p className="section-kicker">TWO WAYS TO PLAY</p>
         <h2>Choose your world.</h2>
         <p>
@@ -110,7 +137,7 @@ function App() {
         </p>
 
         <div className="mode-grid">
-          <article className="mode-card survival-card">
+          <article className="mode-card survival-card" data-reveal="item">
             <div className="mode-card-top">
               <span>01 / SURVIVAL</span>
               <Gamepad2 size={20} />
@@ -123,7 +150,7 @@ function App() {
             <a href="#features">Explore Survival Features <ArrowDownRight size={16} /></a>
           </article>
 
-          <article className="mode-card lifesteal-card">
+          <article className="mode-card lifesteal-card" data-reveal="item">
             <div className="mode-card-top">
               <span>02 / LIFESTEAL</span>
               <ShieldCheck size={20} />
@@ -138,7 +165,7 @@ function App() {
         </div>
       </section>
 
-      <section className="feature-section" id="features">
+      <section className="feature-section" id="features" data-reveal="section">
         <div className="feature-intro">
           <p className="section-kicker">THE RULEX EXPERIENCE</p>
           <h2>Every session<br />has a purpose.</h2>
@@ -149,7 +176,7 @@ function App() {
         </div>
 
         <div className="feature-list">
-          <article className="feature-item">
+          <article className="feature-item" data-reveal="item">
             <span className="feature-number">01</span>
             <div>
               <h3>Build your economy.</h3>
@@ -161,7 +188,7 @@ function App() {
             </div>
           </article>
 
-          <article className="feature-item">
+          <article className="feature-item" data-reveal="item">
             <span className="feature-number">02</span>
             <div>
               <h3>Compete for control.</h3>
@@ -173,7 +200,7 @@ function App() {
             </div>
           </article>
 
-          <article className="feature-item">
+          <article className="feature-item" data-reveal="item">
             <span className="feature-number">03</span>
             <div>
               <h3>Keep discovering.</h3>
@@ -187,7 +214,7 @@ function App() {
         </div>
       </section>
 
-      <section className="ranks-section" id="ranks">
+      <section className="ranks-section" id="ranks" data-reveal="section">
         <div className="ranks-heading">
           <p className="section-kicker">CHOOSE YOUR ADVANTAGE</p>
           <h2>Rise through<br />the ranks.</h2>
@@ -198,7 +225,7 @@ function App() {
         </div>
 
         <div className="rank-grid">
-          <article className="rank-card">
+          <article className="rank-card" data-reveal="item">
             <span className="rank-label">01 / ENTRY</span>
             <h3>Aura</h3>
             <p className="rank-price">$0.99</p>
@@ -228,7 +255,7 @@ function App() {
             </ul>
           </article>
 
-          <article className="rank-card">
+          <article className="rank-card" data-reveal="item">
             <span className="rank-label">03 / ELITE</span>
             <h3>Apex</h3>
             <p className="rank-price">$5.99</p>
@@ -236,13 +263,13 @@ function App() {
               Built for players ready to push further.
             </p>
             <ul>
-              <li>Expanded rank privileges</li>
-              <li>Premium utility and progression</li>
-              <li>Elite status across the network</li>
+              <li>Rank perks to be announced</li>
+              <li>Premium progression benefits</li>
+              <li>Final details coming soon</li>
             </ul>
           </article>
 
-          <article className="rank-card">
+          <article className="rank-card" data-reveal="item">
             <span className="rank-label">04 / HIGHEST TIER</span>
             <h3>Ruler</h3>
             <p className="rank-price">$9.99</p>
@@ -250,9 +277,9 @@ function App() {
               The highest listed rank for those who want to stand apart.
             </p>
             <ul>
-              <li>Top-tier rank identity</li>
-              <li>Premium network experience</li>
-              <li>Designed for dedicated players</li>
+              <li>Highest listed rank</li>
+              <li>Exclusive benefits to be announced</li>
+              <li>Final details coming soon</li>
             </ul>
           </article>
         </div>
