@@ -831,3 +831,17 @@
     margin-top: 50px;
   }
 }
+
+/* Final contrast correction for the ranks heading */
+.ranks-section .ranks-heading h2 {
+  color: #f4f0e8;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.18);
+}
+
+.ranks-section .ranks-heading .section-kicker {
+  color: #d6b27b;
+}
+
+.ranks-section .ranks-heading > p:not(.section-kicker) {
+  color: #c2c4b8;
+}
