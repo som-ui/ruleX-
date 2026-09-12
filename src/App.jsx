@@ -17,21 +17,38 @@ function App() {
   return (
     <main className="site-shell">
       <nav className="navbar">
-        <a className="brand" href="#top" aria-label="RuleX home">
-          <span className="brand-mark">R</span>
-          <span className="brand-name">RULE<span>X</span></span>
-        </a>
+  <div className="nav-inner">
+    <a className="brand" href="#top" aria-label="RuleX home">
+      <span className="brand-mark">R</span>
 
-        <div className="nav-links">
-          <a href="#modes">Modes</a>
-          <a href="#features">Features</a>
-          <a href="#ranks">Ranks</a>
-        </div>
+      <span className="brand-name">
+        RULE<span>X</span>
+      </span>
+    </a>
 
-        <button className="nav-join" onClick={copyServerIp}>
-          Copy IP <Copy size={15} />
-        </button>
-      </nav>
+    <div className="nav-links">
+      <a href="#modes">
+        <span>01</span>
+        Modes
+      </a>
+
+      <a href="#features">
+        <span>02</span>
+        Features
+      </a>
+
+      <a href="#ranks">
+        <span>03</span>
+        Ranks
+      </a>
+    </div>
+
+    <button className="nav-join" onClick={copyServerIp}>
+      <span>Copy IP</span>
+      <Copy size={15} />
+    </button>
+  </div>
+</nav>
 
       <section className="hero" id="top">
         <div className="hero-image" aria-hidden="true" />
@@ -103,7 +120,7 @@ function App() {
               Bounties, custom shops, progression, daily rewards, and a
               world designed for long-term play.
             </p>
-            <a href="#features">Discover Survival <ArrowDownRight size={16} /></a>
+            <a href="#features">Explore Survival Features <ArrowDownRight size={16} /></a>
           </article>
 
           <article className="mode-card lifesteal-card">
@@ -116,7 +133,7 @@ function App() {
               Form alliances, protect your hearts, and fight for control
               in a world where defeat actually matters.
             </p>
-            <a href="#features">Discover LifeSteal <ArrowDownRight size={16} /></a>
+            <a href="#features">Explore LifeSteal Features <ArrowDownRight size={16} /></a>
           </article>
         </div>
       </section>
