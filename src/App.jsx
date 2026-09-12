@@ -2,6 +2,7 @@ import { ArrowDownRight, Copy, Disc3, Gamepad2, ShieldCheck } from 'lucide-react
 import './App.css'
 
 const SERVER_IP = 'rulexmc.mcsh.io'
+const DISCORD_URL = 'https://discord.gg/Jr3ugXAnh'
 
 function App() {
   const copyServerIp = async () => {
@@ -240,6 +241,37 @@ function App() {
         <p className="rank-note">
           Rank details and availability may change as the network evolves.
         </p>
+      </section>
+
+      <section className="final-cta">
+        <div className="final-cta-content">
+          <p className="section-kicker">YOUR NEXT CHAPTER</p>
+          <h2>Build something<br />worth defending.</h2>
+          <p>
+            Join the community, choose your path, and start building
+            your legacy on RuleX.
+          </p>
+
+          <div className="final-cta-actions">
+            <button className="primary-button" onClick={copyServerIp}>
+              COPY SERVER IP <Copy size={17} />
+            </button>
+
+            <a
+              className="secondary-button"
+              href={DISCORD_URL}
+              target="_blank"
+              rel="noreferrer"
+            >
+              JOIN DISCORD <ArrowDownRight size={17} />
+            </a>
+          </div>
+
+          <div className="final-server-line">
+            <span>JAVA EDITION</span>
+            <strong>{SERVER_IP}</strong>
+          </div>
+        </div>
       </section>
 
       <footer className="footer">
