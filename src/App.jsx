@@ -140,12 +140,11 @@ function App() {
 
       <section className="feature-section" id="features">
         <div className="feature-intro">
-          <p className="section-kicker">BUILT FOR PROGRESSION</p>
-          <h2>More than<br />just survival.</h2>
+          <p className="section-kicker">THE RULEX EXPERIENCE</p>
+          <h2>Every session<br />has a purpose.</h2>
           <p className="feature-summary">
-            RuleX is built around the systems that make every session
-            feel meaningful—from your first starter kit to your biggest
-            rivalry.
+            Whether you are building wealth, chasing a bounty, or fighting
+            for control, RuleX gives you more reasons to keep progressing.
           </p>
         </div>
 
@@ -155,9 +154,10 @@ function App() {
             <div>
               <h3>Build your economy.</h3>
               <p>
-                Custom shops, player trading, daily rewards, kits,
-                and an economy designed around long-term progress.
+                Custom shops, player trading, kits, daily rewards, and
+                progression systems that make every resource matter.
               </p>
+              <span className="feature-tag">ECONOMY / PROGRESSION</span>
             </div>
           </article>
 
@@ -166,9 +166,10 @@ function App() {
             <div>
               <h3>Compete for control.</h3>
               <p>
-                Bounties, PvP, live leaderboards, custom enchantments,
-                and rivalries that give every decision weight.
+                Bounties, PvP, leaderboards, custom enchantments, and
+                rivalries that turn ordinary encounters into real stakes.
               </p>
+              <span className="feature-tag">PVP / COMPETITION</span>
             </div>
           </article>
 
@@ -177,9 +178,10 @@ function App() {
             <div>
               <h3>Keep discovering.</h3>
               <p>
-                Skills, upgradable spawners, custom crates, RTP,
-                chat games, trivia, and server events.
+                Farlands, CyberLevels, skills, upgradable spawners, custom
+                crates, RTP, trivia, and server events.
               </p>
+              <span className="feature-tag">EXPLORATION / EVENTS</span>
             </div>
           </article>
         </div>
